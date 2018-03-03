@@ -6,23 +6,29 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+import { FilesService } from "./services/files.service";
+import { FileComponent } from './components/file/file.component';
+
 // creamos las rutas
 const appRoutes: Routes = [
-  { path:'',component: DashboardComponent}
-
+  { path:'',component: DashboardComponent},
+  { path:'file/:id',component: FileComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    FileComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    FilesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

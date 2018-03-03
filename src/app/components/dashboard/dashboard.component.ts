@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilesService } from "../../services/files.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  files:any[];
 
-  constructor() { }
+  constructor(private filesService:FilesService) { }
 
   ngOnInit() {
+    this.files = this.filesService.getFiles();
   }
 
 }

@@ -1,3 +1,13 @@
-<p>
-  dashboard works!
-</p>
+<div *ngIf="files?.length > 0; else noFiles" class="d-flex flex-wrap justify-content-between">
+  <div *ngFor="let file of files">
+      <a class="d-flex flex-column"  [routerLink]="['/file/'+file.ruta]">
+        <i class="fa fa-{{file.tipo}} fa-lg fa-3x"></i>
+        <span>{{file.name}}</span>
+      </a>
+  </div>
+</div>
+
+<ng-template #noFiles>
+  <hr>
+  <h5>No hay Archivos en el Sistema</h5>
+</ng-template>
