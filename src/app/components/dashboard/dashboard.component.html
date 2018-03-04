@@ -1,8 +1,9 @@
 <div *ngIf="files?.length > 0; else noFiles" class="d-flex flex-wrap justify-content-between">
   <div *ngFor="let file of files">
-      <a class="d-flex flex-column"  [routerLink]="['/file/'+file.ruta]">
-        <i class="fa fa-{{file.tipo}} fa-lg fa-3x"></i>
+      <a class="d-flex flex-column text-secondary"  [routerLink]="['/file/'+file.ruta]">
+        <i class="fa fa-{{file.tipo}} fa-3x"></i>
         <span>{{file.name}}</span>
+        <p></p>
       </a>
   </div>
 </div>
